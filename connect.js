@@ -27,7 +27,7 @@ let db = new sqlite3.Database('moviesdatabase.db' , sqlite3.OPEN_READWRITE, (err
   });
 
 
-  db.run('UPDATE movies set name="kingsman",genre="animation" where id = 8', function(err) {
+  db.run('UPDATE movies set name="kingsman",genre="action" where id = 7', function(err) {
     if (err) {
       return console.error(err.message);
     }
@@ -36,7 +36,7 @@ let db = new sqlite3.Database('moviesdatabase.db' , sqlite3.OPEN_READWRITE, (err
   });
 
 
-  db.run(`DELETE FROM movies WHERE id=?`, 9, function(err) {
+  db.run(`DELETE FROM movies WHERE id=6`, function(err) {
     if (err) {
       return console.error(err.message);
     }
