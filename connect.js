@@ -26,12 +26,9 @@ app.get ('/',(req , res) => {
 
       rows:rows
     })
-})
+      })
+       })
 
-})
-
-
- 
 app.get ('/admin',(req , res) => {
   
     db.all('SELECT * FROM movies' ,[], (err, rows) => {
@@ -40,9 +37,9 @@ app.get ('/admin',(req , res) => {
   
         rows:rows
       })
-  })
+       })
+         })
   
-  })
 
   app.post ('/add',(req , res) => {
 
