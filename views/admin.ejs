@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 40px 0 40px;
+        }
+        h4{
+            margin: 10px 0 10px 0;
+        }   
+        div{
+            display: inline-block;
+            vertical-align: top;
+            width: 500px;
+        }
+        input{
+            display: block;
+            margin-top: 20px;
+        }
+        a{
+            display: block;
+        }
+        #edit{
+            color: green;
+        }
+        #delete{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Movies</h1>
+    <ul>
+        <% for (var i =0; i < rows.length; i++) { %>   
+        <li>
+            <h4><%= rows[i].name %></h4>
+            <label>Genre: </label><%= rows[i].genre %>
+            <a id = "edit" href = "/edit/<%= rows[i].id %>">Edit</a>
+            <a id = "delete" href = "/delete/<%= rows[i].id %>">Delete</a>
+        </li>
+        <% } %>         
+    </ul>
+    </div>
+    <div>
+    <h1>Add Movie</h1>
+    <form action="/add" method = "post">
+        <input type="text" name="name"  placeholder="name"/>
+        <input type="text" name="genre" placeholder="genre"/>
+        <input type="submit" value="add movie"/>
+    </form>
+    </div>
+</body>
+</html>
