@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 40px 0 40px;
+        }
+        h4{
+            margin: 10px 0 10px 0;
+        }   
+        div{
+            display: inline-block;
+            vertical-align: top;
+            width: 500px;
+        }
+        input{
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <ul>
+        <% for (var i =0; i < rows.length; i++) { %>   
+        <li>
+            <h4><%= rows[i].name %></h4>
+            <label>Genre: </label><%= rows[i].genre %>
+        </li>
+        <% } %>
+    </ul>
+</div>
+</body>
+</html>

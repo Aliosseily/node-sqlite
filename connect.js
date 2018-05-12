@@ -29,6 +29,8 @@ app.get ('/',(req , res) => {
 })
 
 })
+
+
  
 app.get ('/admin',(req , res) => {
   
@@ -108,6 +110,17 @@ db.run('INSERT INTO movies (name, genre) VALUES (?, ?)', [ name, genre ], functi
       res.redirect('/admin/')
     });
   })
+
+  app.get('/view/:movietitle',(req,res)=>{
+    const id = req.params.movietitle
+
+    db.all('SELECT * FROM movies where id = ?' ,id, (err, rows) => {
+     
+      res.render("view.ejs",{
+        
+              rows:rows
+            })  })
+})
 
 app.listen('3001',()=>{
   console.log('server is listening on port 3000')
